@@ -1,0 +1,18 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: sink
+  namespace: my-namespace
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: "50"
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/targetUtilizationPercentage: "10"
+    spec:
+      containers:
+       - image: docker.io/aliok/message-sink:latest
+         env:
+         - name: latency
+           value: "100"
