@@ -27,7 +27,7 @@
 # Check the startup time of the native executable
 
 ```
-date +%H:%m:%S.%N && ./target/message-sink-1.0.0-SNAPSHOT-runner
+date +%H:%M:%S.%N && ./target/message-sink-1.0.0-SNAPSHOT-runner
 ```
 
 # Check resource usage
